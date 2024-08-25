@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom'
 
 // pages
 import StarshipList from './pages/StarshipList/StarshipList'
-import StarshipDetails from './components/StarshipDetails/StarshipDetails'
+import StarshipDetails from './components/StarshipPage/StarshipPage'
 
 
 // css

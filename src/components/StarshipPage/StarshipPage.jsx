@@ -5,9 +5,10 @@ import { Link } from "react-router-dom";
 
 //services 
 import {getStarshipDetails} from '../../services/sw-api'
+import Pilot from "../Pilot/Pilot";
 
 
-const StarshipDetails = () => {
+const StarshipPage = () => {
   const [starshipDetails,setStarshipDetails] = useState([])
   const{starshipId} = useParams()
   useEffect(()=>{
@@ -17,15 +18,26 @@ const StarshipDetails = () => {
     }
     fetchDetails()
   },[starshipId])
-
+  
   return ( 
-    <div>
-      <h2>NAME: {starshipDetails.name}</h2>
-      <h2>MODEL: {starshipDetails.model}</h2> 
-      <Link to="/starships">RETURN</Link>
+    <div className="details-page">
+      <div className="details">
+        <h2>NAME: {starshipDetails.name}</h2>
+        <h2>MODEL: {starshipDetails.model}</h2> 
+        <ul> Pilots:
+          {starshipDetails.pilots?.length?
+          
+          starshipDetails.pilots?.map(url=> <Pilot url={url}/>)
+          :
+          "No Pilots"
+        }
+        </ul>
+        <Link to="/starships">RETURN</Link>
+      </div>
+      
     </div>
 
   );
 }
 
-export default StarshipDetails;
+export default StarshipPage;

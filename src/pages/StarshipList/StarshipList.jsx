@@ -24,7 +24,7 @@ const StarshipList = () => {
   },[]) //doesnt update according to any state
 
   return (  
-    <main>
+    <main className="list">
       { starshipList.length?   
         starshipList.map(starship=>
           <Link  key={starship.id} to={`/starships/${starship.id}/`}>
