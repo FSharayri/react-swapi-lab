@@ -43,7 +43,7 @@ body{
 }
 .title-card {
   min-width: 100%;
-  font-size: 28px;
+  font-size: 4vw;
   font-weight: normal;
   background-color: #282C34;
   color: #ffffff;
@@ -55,6 +55,10 @@ a{
   text-decoration: none;
   color: white;
 
+}
+a:hover{
+  cursor: pointer;
+  color: plum;
 }
 
 
